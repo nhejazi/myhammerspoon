@@ -206,6 +206,10 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "M", function ()
 	hs.application.launchOrFocus("Kiwi for Gmail") 
 end)
 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "P", function () 
+	hs.application.launchOrFocus("Preview") 
+end)
+
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "V", function () 
 	hs.application.launchOrFocus("MacVim") 
 end)
