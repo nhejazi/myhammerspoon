@@ -1,4 +1,9 @@
--- OSX config file (Hammerspoon + Lua); LAST UPDATED: JANUARY 3, 2016
+--[[
+#######===========================#######
+####### my OSX Hammerspoon config #######
+####### controls hot keys for OSX #######
+#######===========================#######
+--]]
 
 -- simple "Hello World!" example
 --[[ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
@@ -147,7 +152,7 @@ end
 
 -- reactions to WiFi network changes
 local wifiWatcher = nil
-local homeSSID = "Blake House Blues" --may need updating
+local homeSSID = "Knock_On_101" --may need updating
 local lastSSID = hs.wifi.currentNetwork()
 
 function ssidChangedCallback()
@@ -167,70 +172,74 @@ end
 wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback)
 wifiWatcher:start()
 
--- controlling Spotify (add iTunes later on)
-hs.hotkey.bind({"cmd", "alt", "shift"}, "1", function()
-	hs.spotify.play()
+-- controlling Spotify (iTunes has dedicated buttons on Mac)
+hs.hotkey.bind({"cmd", "alt", "shift"}, "2", function()
+  hs.spotify.play()
 end)
 
 hs.hotkey.bind({"cmd", "alt", "shift"}, "`", function()
-	hs.spotify.pause()
+  hs.spotify.pause()
 end)
 
 hs.hotkey.bind({"cmd", "alt", "shift"}, "3", function()
-	hs.spotify.next()
+  hs.spotify.next()
 end)
 
-hs.hotkey.bind({"cmd", "alt", "shift"}, "2", function()
-	hs.spotify.previous()
+hs.hotkey.bind({"cmd", "alt", "shift"}, "1", function()
+  hs.spotify.previous()
 end)
 
 hs.hotkey.bind({"cmd", "alt", "shift"}, "4", function()
-	hs.spotify.displayCurrentTrack()
+  hs.spotify.displayCurrentTrack()
 end)
 
 -- launch shortcuts for useful applications
 -- NOTE {"cmd", "alt", "ctrl"}, '4' reserved for dash global key
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "0", function () 
-	hs.application.launchOrFocus("iTerm") 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "-", function()
+  hs.application.launchOrFocus("iTerm")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "9", function () 
-	hs.application.launchOrFocus("Google Chrome")
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "=", function()
+  hs.application.launchOrFocus("Atom")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "-", function () 
-	hs.application.launchOrFocus("Atom") 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "[", function()
+  hs.application.launchOrFocus("Google Chrome")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "M", function () 
-	hs.application.launchOrFocus("Kiwi for Gmail") 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "]", function()
+  hs.application.launchOrFocus("Finder")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "P", function () 
-	hs.application.launchOrFocus("Preview") 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "M", function()
+  hs.application.launchOrFocus("Kiwi for Gmail")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "V", function () 
-	hs.application.launchOrFocus("MacVim") 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "P", function()
+  hs.application.launchOrFocus("Preview")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function () 
-	hs.application.launchOrFocus("RStudio") 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "V", function()
+  hs.application.launchOrFocus("MacVim")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "S", function () 
-	hs.application.launchOrFocus("Spotify") 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
+  hs.application.launchOrFocus("RStudio")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "F", function () 
-	hs.application.launchOrFocus("Messenger") 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "S", function()
+  hs.application.launchOrFocus("Spotify")
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "T", function () 
-	hs.application.launchOrFocus("Messages") 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "F", function()
+  hs.application.launchOrFocus("Messenger")
+end)
+
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "T", function()
+  hs.application.launchOrFocus("Messages")
 end)
 
 -- hints for shortcuts assigned
---[[ hs.hotkey.bind("ctrl", ";", function()
-	hs.hotkey.showHotkeys()
+--[[ hs.hotkey.bind({"cmd", "alt", "ctrl"}, ";", function()
+  hs.hotkey.showHotkeys()
 end) --]]
