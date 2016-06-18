@@ -9,8 +9,7 @@
 function toggle_application(_app)
     local app = hs.appfinder.appFromName(_app)
     if not app then
-        -- FIXME: This should really launch _app
-        return
+        hs.application.launchOrFocus(_app)
     end
     local mainwin = app:mainWindow()
     if mainwin then
@@ -30,7 +29,7 @@ function home_arrived()
     hs.audiodevice.defaultOutputDevice():setVolume(25)
     hs.notify.new({
           title='Hammerspoon',
-            informativeText='unmuted volume'
+            informativeText='at home...volume unmuted'
         }):send()
 end
 
@@ -40,7 +39,7 @@ function home_departed()
     hs.audiodevice.defaultOutputDevice():setVolume(0)
     hs.notify.new({
           title='Hammerspoon',
-            informativeText='muted volume'
+            informativeText='away from home...volume muted'
         }):send()
 end
 
@@ -172,6 +171,7 @@ hs.alert.show("Config loaded")
 
 -- replacement for Mac Caffeine utility
 local caffeine = hs.menubar.new()
+
 function setCaffeineDisplay(state)
     if state then
         caffeine:setTitle("AWAKE!")
@@ -272,7 +272,7 @@ end) --]]
 
 
 -- use information about changing Wifi networks
-wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback())
+wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback)
 wifiWatcher:start()
 
 
