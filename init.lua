@@ -224,27 +224,46 @@ hs.hotkey.bind(altsmash, "4", function() hs.spotify.displayCurrentTrack() end)
 -- launch shortcuts for useful applications
 -- NOTE {"cmd", "alt", "ctrl"}, '4' reserved for dash global key
 
-hs.hotkey.bind(smash, "-", function() toggle_application("iTerm") end)
+hs.hotkey.bind(smash, "-", function() hs.application.launchOrFocus("iTerm") end)
 
+-- use toggle_applications for Atom, since it behaves kinda weird
 hs.hotkey.bind(smash, "=", function() toggle_application("Atom") end)
 
-hs.hotkey.bind(smash, "[", function() toggle_application("Google Chrome") end)
+hs.hotkey.bind(smash, "[", function()
+  hs.application.launchOrFocus("Google Chrome")
+end)
 
-hs.hotkey.bind(smash, "]", function() toggle_application("Finder") end)
+hs.hotkey.bind(smash, "]", function()
+  hs.application.launchOrFocus("Finder")
+end)
 
-hs.hotkey.bind(smash, "M", function() toggle_application("Kiwi for Gmail") end)
+hs.hotkey.bind(smash, "M", function()
+  hs.application.launchOrFocus("Kiwi for Gmail")
+end)
 
-hs.hotkey.bind(smash, "P", function() toggle_application("Preview") end)
+hs.hotkey.bind(smash, "P", function()
+  hs.application.launchOrFocus("Preview")
+end)
 
-hs.hotkey.bind(smash, "V", function() toggle_application("MacVim") end)
+hs.hotkey.bind(smash, "V", function()
+  hs.application.launchOrFocus("MacVim")
+end)
 
-hs.hotkey.bind(smash, "R", function() toggle_application("RStudio") end)
+hs.hotkey.bind(smash, "R", function()
+  hs.application.launchOrFocus("RStudio")
+end)
 
-hs.hotkey.bind(smash, "S", function() toggle_application("Spotify") end)
+hs.hotkey.bind(smash, "S", function()
+  hs.application.launchOrFocus("Spotify")
+end)
 
-hs.hotkey.bind(smash, "F", function() toggle_application("Messenger") end)
+hs.hotkey.bind(smash, "F", function()
+  hs.application.launchOrFocus("Messenger")
+end)
 
-hs.hotkey.bind(smash, "T", function() toggle_application("Messages") end)
+hs.hotkey.bind(smash, "T", function()
+  hs.application.launchOrFocus("Messages")
+end)
 
 -- hints for shortcuts assigned
 --[[ hs.hotkey.bind({"cmd", "alt", "ctrl"}, ";", function()
