@@ -272,7 +272,7 @@ end) --]]
 
 
 -- use information about changing Wifi networks
-wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback)
+wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback())
 wifiWatcher:start()
 
 
