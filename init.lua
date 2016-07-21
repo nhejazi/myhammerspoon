@@ -224,7 +224,11 @@ hs.hotkey.bind(altsmash, "4", function() hs.spotify.displayCurrentTrack() end)
 -- launch shortcuts for useful applications
 -- NOTE {"cmd", "alt", "ctrl"}, '4' reserved for dash global key
 
-hs.hotkey.bind(smash, "-", function() hs.application.launchOrFocus("iTerm") end)
+hs.hotkey.bind(smash, "0", function() hs.application.launchOrFocus("iTerm") end)
+
+hs.hotkey.bind(smash, "-", function()
+  hs.application.launchOrFocus("HyperTerm")
+end)
 
 -- use toggle_applications for Atom, since it behaves kinda weird
 hs.hotkey.bind(smash, "=", function() toggle_application("Atom") end)
