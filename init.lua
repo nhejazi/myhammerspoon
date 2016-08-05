@@ -1,9 +1,21 @@
 --[[
 #######===========================#######
-####### my OSX Hammerspoon config #######
-####### controls hot keys for OSX #######
+####### Hammerspoon configuration #######
 #######===========================#######
 --]]
+
+
+-- Turn off dumb animation shit
+hs.window.animationDuration = 0
+
+
+-- Get list of screens and refresh list whenever screens are plugged/unplugged
+local screens = hs.screen.allScreens()
+local screenwatcher = hs.screen.watcher.new(function()
+  screens = hs.screen.allScreens()
+end)
+screenwatcher:start()
+
 
 -- Toggle an application between being frontmost app and hidden
 function toggle_application(_app)
@@ -47,6 +59,9 @@ end
 -- variables for hotkey smash
 local smash = {"cmd", "alt", "ctrl"}
 local altsmash = {"cmd", "alt", "shift"}
+local nudgekey = {"cmd", "alt"}
+local pushkey = {"cmd", "ctrl"}
+
 
 -- basic function for window movement (using NetHack key definitions)
 hs.hotkey.bind(smash, "Y", function()
@@ -117,6 +132,45 @@ hs.hotkey.bind(smash, "N", function()
   win:setFrame(f)
 end)
 
+
+-- Move a window a number of pixels in x and y
+function nudge(xpos, ypos)
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  f.x = f.x + xpos
+  f.y = f.y + ypos
+  win:setFrame(f)
+end
+
+-- Movement hotkeys
+hs.hotkey.bind(nudgekey, 'down', function() nudge(0, 100) end)  --down
+hs.hotkey.bind(nudgekey, "up", function() nudge(0, -100) end)   --up
+hs.hotkey.bind(nudgekey, "right", function() nudge(100, 0) end) --right
+hs.hotkey.bind(nudgekey, "left", function() nudge(-100,0) end)  --left
+
+
+-- For x and y: use 0 to expand fully in that dimension, 0.5 to expand halfway
+-- For w and h: use 1 for full, 0.5 for half
+function push(x, y, w, h)
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x + (max.w*x)
+  f.y = max.y + (max.h*y)
+  f.w = max.w*w
+  f.h = max.h*h
+  win:setFrame(f)
+end
+
+-- Push to screen edge
+hs.hotkey.bind(pushkey, "down", function() push(0, 0.5, 1, 0.5) end)  --down
+hs.hotkey.bind(pushkey, "up", function() push(0, 0, 1, 0.5) end)      --up
+hs.hotkey.bind(pushkey, "right", function() push(0.5, 0, 0.5, 1) end) -- right
+hs.hotkey.bind(pushkey, "left", function() push(0, 0, 0.5, 1) end)    -- left
+
+
 -- window tiling: splitting panes right/left for productivity
 hs.hotkey.bind(smash, "Right", function()
   local win = hs.window.focusedWindow()
@@ -173,10 +227,11 @@ hs.alert.show("Config loaded")
 local caffeine = hs.menubar.new()
 
 function setCaffeineDisplay(state)
+    local result
     if state then
-        caffeine:setTitle("AWAKE!")
+        caffeine:setIcon("images/caffeine-on.pdf")
     else
-        caffeine:setTitle("SLEEPY")
+        caffeine:setIcon("images/caffeine-off.pdf")
     end
 end
 
