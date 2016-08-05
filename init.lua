@@ -59,7 +59,7 @@ end
 -- variables for hotkey smash
 local smash = {"cmd", "alt", "ctrl"}
 local altsmash = {"cmd", "alt", "shift"}
-local nudgekey = {"cmd", "alt"}
+local nudgekey = {"alt", "ctrl"}
 local pushkey = {"cmd", "ctrl"}
 
 
