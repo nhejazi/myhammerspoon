@@ -288,32 +288,40 @@ end)
 -- use toggle_applications for Atom, since it behaves kinda weird
 hs.hotkey.bind(smash, "=", function() toggle_application("Atom") end)
 
+hs.hotkey.bind(smash, "P", function()
+  hs.application.launchOrFocus("Preview")
+end)
+
 hs.hotkey.bind(smash, "[", function()
-  hs.application.launchOrFocus("Google Chrome")
+  hs.application.launchOrFocus("Finder")
 end)
 
 hs.hotkey.bind(smash, "]", function()
-  hs.application.launchOrFocus("Finder")
+  hs.application.launchOrFocus("Safari")
 end)
 
 hs.hotkey.bind(smash, "M", function()
   hs.application.launchOrFocus("Kiwi for Gmail")
 end)
 
-hs.hotkey.bind(smash, "P", function()
-  hs.application.launchOrFocus("Preview")
+hs.hotkey.bind(smash, ",", function()
+  hs.application.launchOrFocus("Spotify")
+end)
+
+hs.hotkey.bind(smash, ".", function()
+  hs.application.launchOrFocus("Google Chrome")
+end)
+
+hs.hotkey.bind(smash, ";", function()
+  hs.application.launchOrFocus("RStudio")
+end)
+
+hs.hotkey.bind(smash, "'", function()
+  hs.application.launchOrFocus("Rodeo")
 end)
 
 hs.hotkey.bind(smash, "V", function()
   hs.application.launchOrFocus("MacVim")
-end)
-
-hs.hotkey.bind(smash, "R", function()
-  hs.application.launchOrFocus("RStudio")
-end)
-
-hs.hotkey.bind(smash, "S", function()
-  hs.application.launchOrFocus("Spotify")
 end)
 
 hs.hotkey.bind(smash, "F", function()
