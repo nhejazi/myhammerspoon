@@ -324,6 +324,10 @@ hs.hotkey.bind(smash, "V", function()
   hs.application.launchOrFocus("MacVim")
 end)
 
+hs.hotkey.bind(smash, "C", function()
+  hs.application.launchOrFocus("Calendar")
+end)
+
 hs.hotkey.bind(smash, "F", function()
   hs.application.launchOrFocus("Messenger")
 end)
