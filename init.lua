@@ -246,7 +246,7 @@ end
 
 -- reactions to WiFi network changes
 local wifiWatcher = nil
-local homeSSID = "Knock_On_101" --NEEDS UPDATING
+local homeSSID = "BringBeerTo6112" --MAY NEED UPDATING
 local lastSSID = hs.wifi.currentNetwork()
 
 function ssidChangedCallback()
