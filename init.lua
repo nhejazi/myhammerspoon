@@ -281,9 +281,7 @@ hs.hotkey.bind(altsmash, "4", function() hs.spotify.displayCurrentTrack() end)
 
 hs.hotkey.bind(smash, "0", function() hs.application.launchOrFocus("iTerm") end)
 
-hs.hotkey.bind(smash, "-", function()
-  hs.application.launchOrFocus("HyperTerm")
-end)
+hs.hotkey.bind(smash, "-", function() hs.application.launchOrFocus("Hyper") end)
 
 -- use toggle_applications for Atom, since it behaves kinda weird
 hs.hotkey.bind(smash, "=", function() toggle_application("Atom") end)

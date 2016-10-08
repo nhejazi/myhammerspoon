@@ -1,4 +1,4 @@
-# my Hammerspoon
+# my.Hammerspoon
 
 > my configuration files for the macOS (formerly, Mac OS X) management tool
 > [Hammerspoon](http://www.hammerspoon.org/)
