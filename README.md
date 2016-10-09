@@ -1,9 +1,9 @@
 # my.Hammerspoon
 
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+
 > my configuration files for the macOS (formerly, Mac OS X) management tool
 > [Hammerspoon](http://www.hammerspoon.org/)
-
-[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 ---
 
