@@ -281,10 +281,10 @@ hs.hotkey.bind(altsmash, "4", function() hs.spotify.displayCurrentTrack() end)
 
 hs.hotkey.bind(smash, "=", function() hs.application.launchOrFocus("Hyper") end)
 
-hs.hotkey.bind(smash, "-", function() hs.application.launchOrFocus("VimR") end)
-
 -- use toggle_applications for Atom, since it behaves kinda weird
-hs.hotkey.bind(smash, "0", function() toggle_application("Atom") end)
+hs.hotkey.bind(smash, "-", function() toggle_application("Atom") end)
+
+hs.hotkey.bind(smash, "0", function() hs.application.launchOrFocus("VimR") end)
 
 hs.hotkey.bind(smash, "P", function()
   hs.application.launchOrFocus("Preview")
