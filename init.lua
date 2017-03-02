@@ -284,7 +284,9 @@ hs.hotkey.bind(smash, "=", function() hs.application.launchOrFocus("Hyper") end)
 -- use toggle_applications for Atom, since it behaves kinda weird
 hs.hotkey.bind(smash, "-", function() toggle_application("Atom") end)
 
-hs.hotkey.bind(smash, "0", function() hs.application.launchOrFocus("VimR") end)
+hs.hotkey.bind(smash, "0", function()
+  hs.application.launchOrFocus("Spotify")
+end)
 
 hs.hotkey.bind(smash, "P", function()
   hs.application.launchOrFocus("Preview")
@@ -296,10 +298,6 @@ end)
 
 hs.hotkey.bind(smash, "[", function()
   hs.application.launchOrFocus("Safari")
-end)
-
-hs.hotkey.bind(smash, "9", function()
-  hs.application.launchOrFocus("Spotify")
 end)
 
 hs.hotkey.bind(smash, "M", function()
@@ -324,8 +322,8 @@ hs.hotkey.bind(smash, "O", function()
   hs.application.launchOrFocus("Calendar")
 end)
 
-hs.hotkey.bind(smash, "F", function()
-  hs.application.launchOrFocus("Messenger")
+hs.hotkey.bind(smash, "Y", function()
+  hs.application.launchOrFocus("Caprine")
 end)
 
 hs.hotkey.bind(smash, "T", function()

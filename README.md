@@ -1,6 +1,4 @@
-# .hammerspoon
-
-[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+# .hammerspoon [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 > a (minimal) configuration for the macOS management tool
 > [Hammerspoon](http://www.hammerspoon.org/)
