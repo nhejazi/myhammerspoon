@@ -322,6 +322,10 @@ hs.hotkey.bind(smash, "O", function()
   hs.application.launchOrFocus("Calendar")
 end)
 
+hs.hotkey.bind(smash, "I", function()
+  hs.application.launchOrFocus("Simplenote")
+end)
+
 hs.hotkey.bind(smash, "Y", function()
   hs.application.launchOrFocus("Caprine")
 end)
