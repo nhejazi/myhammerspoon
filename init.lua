@@ -198,16 +198,6 @@ hs.hotkey.bind(smash, "Left", function()
   win:setFrame(f)
 end)
 
--- multi-window layout for communication/entertainment productivity
---[[ local laptopScreen = "Color LCD"
-    local windowLayout = {
-        {"Spotify", nil, laptopScreen, hs.layout.left50, nil, nil},
-        {"Kiwi for Gmail", nil, laptopScreen, hs.layout.right50, nil, nil},
-        {"Messages", nil, laptopScreen, hs.layout.maximized, nil, nil},
-        {"Messenger", nil, laptopScreen, nil, nil, hs.geometry.rect(0, -48, 400, 48)},
-    }
-    hs.layout.apply(windowLayout) --]]
-
 -- automated re-loading of configuration file when updated
 function reloadConfig(files)
     doReload = false
@@ -246,7 +236,7 @@ end
 
 -- reactions to WiFi network changes
 local wifiWatcher = nil
-local homeSSID = "BringBeerTo6112" --MAY NEED UPDATING
+local homeSSID = "DialupForLyfe112" --MAY NEED UPDATING
 local lastSSID = hs.wifi.currentNetwork()
 
 function ssidChangedCallback()
@@ -265,20 +255,7 @@ function ssidChangedCallback()
 end
 
 
--- controlling Spotify (iTunes has dedicated buttons on Mac)
-hs.hotkey.bind(altsmash, "2", function() hs.spotify.play() end)
-
-hs.hotkey.bind(altsmash, "`", function() hs.spotify.pause() end)
-
-hs.hotkey.bind(altsmash, "3", function() hs.spotify.next() end)
-
-hs.hotkey.bind(altsmash, "1", function() hs.spotify.previous() end)
-
-hs.hotkey.bind(altsmash, "4", function() hs.spotify.displayCurrentTrack() end)
-
--- launch shortcuts for useful applications
--- NOTE {"cmd", "alt", "ctrl"}, '4' reserved for dash global key
-
+-- launch shortcuts for useful applications/functions
 hs.hotkey.bind(smash, "=", function() hs.application.launchOrFocus("Hyper") end)
 
 -- use toggle_applications for Atom, since it behaves kinda weird
@@ -286,6 +263,10 @@ hs.hotkey.bind(smash, "-", function() toggle_application("Atom") end)
 
 hs.hotkey.bind(smash, "0", function()
   hs.application.launchOrFocus("MacVim")
+end)
+
+hs.hotkey.bind(smash, "space", function()
+  hs.spotify.displayCurrentTrack()
 end)
 
 hs.hotkey.bind(smash, "P", function()
@@ -312,6 +293,10 @@ hs.hotkey.bind(smash, ",", function() hs.application.launchOrFocus("iTerm") end)
 
 hs.hotkey.bind(smash, ".", function()
   hs.application.launchOrFocus("Google Chrome")
+end)
+
+hs.hotkey.bind(smash, "/", function()
+  hs.application.launchOrFocus("Firefox")
 end)
 
 hs.hotkey.bind(smash, ";", function()
