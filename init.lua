@@ -256,13 +256,17 @@ end
 
 
 -- launch shortcuts for useful applications/functions
-hs.hotkey.bind(smash, "=", function() hs.application.launchOrFocus("Hyper") end)
+hs.hotkey.bind(smash, "=", function()
+  hs.application.launchOrFocus("Hyper")
+end)
 
 -- use toggle_applications for Atom, since it behaves kinda weird
-hs.hotkey.bind(smash, "-", function() toggle_application("Atom") end)
+hs.hotkey.bind(smash, "-", function()
+  toggle_application("iTerm")
+end)
 
 hs.hotkey.bind(smash, "0", function()
-  hs.application.launchOrFocus("MacVim")
+  hs.application.launchOrFocus("Atom")
 end)
 
 hs.hotkey.bind(smash, "space", function()
@@ -273,38 +277,20 @@ hs.hotkey.bind(smash, "P", function()
   hs.application.launchOrFocus("Preview")
 end)
 
-hs.hotkey.bind(smash, "]", function()
+hs.hotkey.bind(smash, "[", function()
   hs.application.launchOrFocus("Finder")
 end)
 
-hs.hotkey.bind(smash, "[", function()
-  hs.application.launchOrFocus("Safari")
-end)
-
-hs.hotkey.bind(smash, "N", function()
+hs.hotkey.bind(smash, "M", function()
   hs.application.launchOrFocus("Spotify")
 end)
 
-hs.hotkey.bind(smash, "M", function()
-  hs.application.launchOrFocus("Kiwi for Gmail")
+hs.hotkey.bind(smash, ",", function()
+  hs.application.launchOrFocus("FirefoxNightly")
 end)
-
-hs.hotkey.bind(smash, ",", function() hs.application.launchOrFocus("iTerm") end)
 
 hs.hotkey.bind(smash, ".", function()
   hs.application.launchOrFocus("Google Chrome")
-end)
-
-hs.hotkey.bind(smash, "/", function()
-  hs.application.launchOrFocus("Firefox")
-end)
-
-hs.hotkey.bind(smash, ";", function()
-  hs.application.launchOrFocus("RStudio")
-end)
-
-hs.hotkey.bind(smash, "'", function()
-  hs.application.launchOrFocus("Rodeo")
 end)
 
 hs.hotkey.bind(smash, "O", function()
@@ -315,12 +301,12 @@ hs.hotkey.bind(smash, "I", function()
   hs.application.launchOrFocus("Simplenote")
 end)
 
-hs.hotkey.bind(smash, "Y", function()
-  hs.application.launchOrFocus("Caprine")
-end)
-
 hs.hotkey.bind(smash, "T", function()
   hs.application.launchOrFocus("Messages")
+end)
+
+hs.hotkey.bind(smash, "R", function()
+  hs.application.launchOrFocus("RStudio")
 end)
 
 -- hints for shortcuts assigned
