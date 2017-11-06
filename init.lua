@@ -260,13 +260,17 @@ hs.hotkey.bind(smash, "=", function()
   hs.application.launchOrFocus("Hyper")
 end)
 
--- use toggle_applications for Atom, since it behaves kinda weird
 hs.hotkey.bind(smash, "-", function()
-  toggle_application("iTerm")
+  hs.application.launchOrFocus("iTerm")
 end)
 
+-- NOTE: use toggle_applications for Atom, since it behaves kinda weird
 hs.hotkey.bind(smash, "0", function()
-  hs.application.launchOrFocus("Atom")
+  toggle_application("Atom")
+end)
+
+hs.hotkey.bind(smash, "9", function()
+  hs.application.launchOrFocus("MacVim")
 end)
 
 hs.hotkey.bind(smash, "space", function()
@@ -286,7 +290,7 @@ hs.hotkey.bind(smash, "M", function()
 end)
 
 hs.hotkey.bind(smash, ",", function()
-  hs.application.launchOrFocus("FirefoxNightly")
+  hs.application.launchOrFocus("Firefox")
 end)
 
 hs.hotkey.bind(smash, ".", function()
@@ -305,7 +309,7 @@ hs.hotkey.bind(smash, "T", function()
   hs.application.launchOrFocus("Messages")
 end)
 
-hs.hotkey.bind(smash, "R", function()
+hs.hotkey.bind(smash, "'", function()
   hs.application.launchOrFocus("RStudio")
 end)
 
