@@ -257,7 +257,7 @@ end
 
 -- launch shortcuts for useful applications/functions
 hs.hotkey.bind(smash, "=", function()
-  hs.application.launchOrFocus("Hyper")
+  toggle_application("Alacritty")
 end)
 
 hs.hotkey.bind(smash, "-", function()
