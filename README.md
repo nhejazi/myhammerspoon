@@ -19,7 +19,7 @@ Cask](https://caskroom.github.io/) via `brew cask install hammerspoon`.
 
 ## License
 
-&copy; 2016 [Nima Hejazi](http://nimahejazi.org)
+&copy; 2016-2018 [Nima Hejazi](https://nimahejazi.org)
 
 The contents of this repository are distributed under the MIT license. See file
 `LICENSE` for details.
